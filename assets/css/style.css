@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body{
+  margin: 0px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.post-card{
+  padding: 24px;
+  height: 500px;
+  background-color: grey;
+  color: white
+}
+
+.post-card-small{
+  padding: 24px;
+  height: 200px;
+  background-color: grey;
+  color: white
+}
+
+.postview-header{
+  padding: 24px;
+  height: 100%;
+  background-color: grey;
+  color: white
+}
+
+.postview-content{
+  max-width: 800px;
+  padding: 16px;
+}
+
+.share-btn{
+  margin-top: -30px;
+  margin-left: 85%;
+}
+
+.hr-with-margin{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.social-btns{
+  padding: 8px;
+}

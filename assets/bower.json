@@ -1,0 +1,29 @@
+{
+  "name": "polymer-magazine",
+  "authors": [
+    "Youngbin Han <sukso96100@gmail.com>"
+  ],
+  "description": "Polymer based magazine style jekyll theme",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-input": "PolymerElements/paper-input#^1.1.22",
+    "paper-ui-elements": "PolymerElements/paper-ui-elements",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.1.7",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0",
+    "app-layout": "PolymerElements/app-layout#^0.10.6",
+    "paper-chip": "bendavis78/paper-chip#^1.1.1",
+    "paper-fab": "PolymerElements/paper-fab#^1.2.1",
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2",
+    "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
+  }
+}
