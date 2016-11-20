@@ -59,7 +59,7 @@ layout: default
             <div class="col-1-2">
               <paper-material class="post-card-small" elevation="0"
                 onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                onclick="location.href='{{ page.previous.url }}'"
+                onclick="location.href='{{ site.baseurl}}/{{ page.previous.url }}'"
                 style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                 rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;{% endif %}"
                 align="start">
@@ -75,7 +75,7 @@ layout: default
             <div class="col-1-2">
               <paper-material class="post-card-small" elevation="0"
                 onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                onclick="location.href='{{ page.next.url }}'"
+                onclick="location.href='{{ site.baseurl}}/{{ page.next.url }}'"
                 style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                 rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
                 align="start">

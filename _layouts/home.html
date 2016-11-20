@@ -17,7 +17,7 @@ layout: default
 
           <paper-material class="content post-card" elevation="0"
             onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-            onclick="location.href='{{ post.url }}'"
+            onclick="location.href='{{ site.baseurl}}/{{ post.url }}'"
             style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
             rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}">
               <paper-ripple></paper-ripple>
@@ -40,7 +40,7 @@ layout: default
       <table align="center" style="margin-bottom:160px;">
         <tr>
           <td style="padding-right:16px;">
-            <a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% else %}{% endif %}">
+            <a href="{% if paginator.next_page %}{{ site.baseurl}}/{{ paginator.next_page_path }}{% else %}{% endif %}">
               <paper-button>
                 << Older
               </button>
@@ -48,7 +48,7 @@ layout: default
             </td>
             <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
             <td style="padding-left:16px;">
-              <a href="{% if paginator.previous_page %}{{ paginator.previous_page_path }}{% else %}{% endif %}">
+              <a href="{% if paginator.previous_page %}{{ site.baseurl}}/{{ paginator.previous_page_path }}{% else %}{% endif %}">
                 <paper-button>
                Newer >>
               </button>
