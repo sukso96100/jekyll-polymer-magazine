@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 
 body{
   margin: 0px;
@@ -8,21 +8,21 @@ body{
   padding: 24px;
   height: 500px;
   background-color: grey;
-  color: white
+  color: white;
 }
 
 .post-card-small{
   padding: 24px;
   height: 200px;
   background-color: grey;
-  color: white
+  color: white;
 }
 
 .postview-header{
   padding: 24px;
   height: 100%;
   background-color: grey;
-  color: white
+  color: white;
 }
 
 .postview-content{
