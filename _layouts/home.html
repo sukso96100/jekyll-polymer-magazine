@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<body>
+  <paper-header-panel >
+    <paper-toolbar>
+      <div class="title">
+        {{ site.title }}
+      </div>
+      <paper-icon-button icon="search"></paper-icon-button>
+    </paper-toolbar>
+    <div>
+      <div class="grid grid-pad">
+
+        {% for post in paginator.posts %}
+        <div class="col-1-2">
+
+          <paper-material class="content post-card" elevation="0"
+            onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
+            onclick="location.href='{{ post.url }}'"
+            style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}">
+              <paper-ripple></paper-ripple>
+              <h2>{{ post.title }}</h2>
+              <p>
+                {{ post.date | date: "%Y.%m.%d" }}
+              </p>
+              <p>
+                {{ post.content | strip_html | truncatewords:60 }}
+                <section>
+                  {% for tag in post.tags %}
+                  <b>#{{ tag }}</b>
+                  {% endfor %}
+                </section>
+              </p>
+            </paper-material>
+        </div>
+        {% endfor %}
+      </div>
+      <table align="center" style="margin-bottom:160px;">
+        <tr>
+          <td style="padding-right:16px;">
+            <a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% else %}{% endif %}">
+              <paper-button>
+                << Older
+              </button>
+              </a>
+            </td>
+            <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
+            <td style="padding-left:16px;">
+              <a href="{% if paginator.previous_page %}{{ paginator.previous_page_path }}{% else %}{% endif %}">
+                <paper-button>
+               Newer >>
+              </button>
+             </a>
+           </td>
+         </tr>
+       </table>
+    </div>
+  </paper-header-panel>
+</body>
