@@ -1,0 +1,64 @@
+<paper-menu-button class="share-btn">
+  <paper-fab icon="social:share" class="dropdown-trigger"></paper-fab>
+    <paper-menu class="dropdown-content">
+      <paper-item
+        onclick="window.open('https://plus.google.com/share?url={{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+              </td>
+              <td>
+                Google+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </paper-item>
+      <paper-item
+        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </td>
+              <td>
+                Facebook
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </paper-item>
+      <paper-item
+        onclick="window.open('https://twitter.com/intent/tweet?text={{ page.title }} {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </td>
+              <td>
+                Twitter
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </paper-item>
+      <paper-item onclick="prompt('Copy This URL','{{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <iron-icon icon="link"></iron-icon>
+              </td>
+              <td>
+                Copy Link
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </paper-item>
+    </paper-menu>
+  </paper-menu-button>

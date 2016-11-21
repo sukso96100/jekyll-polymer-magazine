@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Home
 ---
 <body>
   <paper-header-panel >
@@ -37,25 +38,24 @@ layout: default
         </div>
         {% endfor %}
       </div>
-      <table align="center" style="margin-bottom:160px;">
+      <table align="center" style="margin-bottom:64px; margin-top:32px;">
         <tr>
           <td style="padding-right:16px;">
-            <a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% else %}{% endif %}">
-              <paper-button>
-                << Older
-              </button>
-              </a>
+              <paper-button {% if paginator.next_page %} onclick="location.href='{{ paginator.next_page_path }}'"{% else %}{% endif %}>
+                <iron-icon icon="arrow-back"></iron-icon>
+                Older
+              </paper-button>
             </td>
             <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
             <td style="padding-left:16px;">
-              <a href="{% if paginator.previous_page %}{{ paginator.previous_page_path }}{% else %}{% endif %}">
-                <paper-button>
-               Newer >>
-              </button>
-             </a>
+                <paper-button {% if paginator.previous_page %} onclick="location.href='{{ paginator.previous_page_path }}'"{% else %}{% endif %}>
+               Newer
+               <iron-icon icon="arrow-forward"></iron-icon>
+             </paper-button>
            </td>
          </tr>
        </table>
+       {% include footer.html %}
     </div>
   </paper-header-panel>
 </body>

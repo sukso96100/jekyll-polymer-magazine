@@ -13,40 +13,16 @@ layout: default
   <div>
     <section class="postview-header" elevation="0"
       style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}">
-      <h1>{{ page.title }}</h1>
-      <p>
-        {{ page.date | date: "%Y.%m.%d" }}
-      </p>
+      rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
+      align="center">
+      <div class="postview-titlebox" align="start">
+        <h1>{{ page.title }}</h1>
+        <p>
+          {{ page.date | date: "%Y.%m.%d" }}
+        </p>
+      </div>
     </section>
-    <paper-menu-button class="share-btn">
-      <paper-fab icon="social:share" class="dropdown-trigger"></paper-fab>
-        <paper-menu class="dropdown-content">
-          <paper-item
-            onclidk="window.open('https://plus.google.com/share?url=
-            {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:google-plus"></iron-icon>
-            Google+
-          </paper-item>
-          <paper-item
-            onclidk="window.open('https://www.facebook.com/sharer/sharer.php?u=
-            {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:facebook"></iron-icon>
-            Facebook
-          </paper-item>
-          <paper-item
-            onclidk="window.open('https://twitter.com/intent/tweet?text=
-            {{ page.title }} {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:twitter"></iron-icon>
-            Facebook
-          </paper-item>
-          <paper-item>
-            <iron-icon icon="link"></iron-icon>
-            <paper-input disabled
-              value="{{ site.url }}/{{ site.baseurl }}/{{ page.url }}"></paper-input>
-          </paper-item>
-        </paper-menu>
-      </paper-menu-button>
+    {% include sharebtn.html %}
       <div align="center">
         <section class="postview-content" align="start">
           {{ page.content }}
@@ -73,6 +49,7 @@ layout: default
           </section>
           {% include disqus.html %}
         </section>
+
         <!-- Show Previous and Next Post Link -->
         <div class="grid grid-pad">
           {% if page.previous.url %}
@@ -95,7 +72,7 @@ layout: default
             <div class="col-1-2">
               <paper-material class="post-card-small" elevation="0"
                 onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                onclick="location.href='{{ site.baseurl}}/{{ page.next.url }}'"
+                onclick="location.href='{{ site.baseurl }}/{{ page.next.url }}'"
                 style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                 rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
                 align="start">
@@ -109,6 +86,7 @@ layout: default
           {% else %}{% endif %}
         </div>
       </div>
+      {% include footer.html %}
     </div>
   </paper-header-panel>
   {% include javascripts.html %}
