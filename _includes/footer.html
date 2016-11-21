@@ -1,12 +1,28 @@
 <section class="footer">
   <div align="right">
-    <paper-button class="footer-btn"><i class="fa fa-google-plus" aria-hidden="true"></i></paper-button>
-    <paper-button class="footer-btn"><i class="fa fa-facebook" aria-hidden="true"></i></paper-button>
-    <paper-button class="footer-btn"><i class="fa fa-twitter" aria-hidden="true"></i></paper-button>
-    <paper-button class="footer-btn"><i class="fa fa-github" aria-hidden="true"></i></paper-button>
+    {% if site.googleplus %}
+    <paper-button class="footer-btn" onclick="location.href='https://plus.google.com/{{site.googleplus}}'">
+      <i class="fa fa-google-plus" aria-hidden="true"></i>
+    </paper-button>
+    {% endif %}
+    {% if site.facebook %}
+    <paper-button class="footer-btn" onclick="location.href='https://facebook.com/{{site.facebook}}'">
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+    </paper-button>
+    {% endif %}
+    {% if site.twitter %}
+    <paper-button class="footer-btn" onclick="location.href='https://twitter.com/{{site.twitter}}'">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </paper-button>
+    {% endif %}
+    {% if site.github %}
+    <paper-button class="footer-btn" onclick="location.href='https://github.com/{{site.github}}'">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </paper-button>
+    {% endif %}
   </div>
 <div align="left">
-  {{ site.title }} | ⓒ {{ site.author }} | Powered by Jekyll and
+  {{ site.title }} | ⓒ {{ site.name }} | Powered by Jekyll and
   <a href="https://github.com/sukso96100/jekyll-polymer-magazine">Polymer Magazine</a>
 </div>
 </section>
