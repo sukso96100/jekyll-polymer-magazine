@@ -22,9 +22,29 @@ layout: default
     <paper-menu-button class="share-btn">
       <paper-fab icon="social:share" class="dropdown-trigger"></paper-fab>
         <paper-menu class="dropdown-content">
-          <paper-item>Share</paper-item>
-          <paper-item>Settings</paper-item>
-          <paper-item>Help</paper-item>
+          <paper-item
+            onclidk="window.open('https://plus.google.com/share?url=
+            {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+            <iron-icon icon="fa:google-plus"></iron-icon>
+            Google+
+          </paper-item>
+          <paper-item
+            onclidk="window.open('https://www.facebook.com/sharer/sharer.php?u=
+            {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+            <iron-icon icon="fa:facebook"></iron-icon>
+            Facebook
+          </paper-item>
+          <paper-item
+            onclidk="window.open('https://twitter.com/intent/tweet?text=
+            {{ page.title }} {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
+            <iron-icon icon="fa:twitter"></iron-icon>
+            Facebook
+          </paper-item>
+          <paper-item>
+            <iron-icon icon="link"></iron-icon>
+            <paper-input disabled
+              value="{{ site.url }}/{{ site.baseurl }}/{{ page.url }}"></paper-input>
+          </paper-item>
         </paper-menu>
       </paper-menu-button>
       <div align="center">

@@ -42,7 +42,7 @@ layout: default
           <td style="padding-right:16px;">
             <a href="{% if paginator.next_page %}{{ site.baseurl}}/{{ paginator.next_page_path }}{% else %}{% endif %}">
               <paper-button>
-                << Older
+                <iron-icon icon="arrow-back"></iron-icon> Older
               </button>
               </a>
             </td>
@@ -50,7 +50,7 @@ layout: default
             <td style="padding-left:16px;">
               <a href="{% if paginator.previous_page %}{{ site.baseurl}}/{{ paginator.previous_page_path }}{% else %}{% endif %}">
                 <paper-button>
-               Newer >>
+               Newer <iron-icon icon="arrow_forward"></iron-icon>
               </button>
              </a>
            </td>
