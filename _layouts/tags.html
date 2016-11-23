@@ -3,13 +3,7 @@ layout: default
 ---
 <body>
   <paper-header-panel>
-    <paper-toolbar>
-        <paper-icon-button icon="arrow-back" onclick="location.href='{{ site.baseurl }}/'"></paper-icon-button>
-      <div class="title">
-        {{ site.title }}
-      </div>
-      <paper-icon-button icon="search"></paper-icon-button>
-    </paper-toolbar>
+    {% include header.html %}
     <div>
       <div align="center" class="container">
       <section class="postview-content" align="start">
