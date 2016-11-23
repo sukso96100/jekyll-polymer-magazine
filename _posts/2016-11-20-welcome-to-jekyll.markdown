@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-11-20 22:17:41 +0900
 categories: jekyll update
+tags: sss
 color: "#ff0000"
 image: https://youngbin.xyz/blogimgs/cloud-computing-day-with-aws-0.jpg
 ---

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 
 body{
+  height: 100%;
   margin: 0px;
   font-family: 'Noto Sans KR', sans-serif;
 }
@@ -63,8 +64,13 @@ img{
   margin-top: 16px;
   background-color: #ecf0f1;
   padding: 32px;
+
 }
 
 .footer-btn{
   color: black;
+}
+
+.container{
+  min-height: 75%;
 }
