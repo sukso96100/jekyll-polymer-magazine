@@ -1,6 +1,6 @@
 # jekyll-polymer-magazine
 
-A Magazine stle theme for Jekyll based on Polymer Library
+A [Google Design](degisn.google.com) inspired Magazine style theme for Jekyll based on Polymer Library
 
 ## Installation
 
@@ -33,3 +33,12 @@ Just Fork this repo. then edit `_config.yml` to suit your needs.
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Theme Preview
+![](preview/preview-1.png)
+![](preview/preview-2.png)
+![](preview/preview-3.png)
+![](preview/preview-4.png)
+![](preview/preview-5.png)
+![](preview/preview-6.png)
+![](preview/preview-7.png)
