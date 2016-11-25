@@ -24,7 +24,7 @@ layout: default
             <section>
               <hr class="hr-with-margin" />
               {% for tag in page.tags %}
-                <b>#{{ tag }}</b>
+              <paper-button onclick="location.href='{{ site.baseurl }}/tags#{{ tag }}'">#{{ tag }}</paper-button>
               {% endfor %}
               <table class="social-btns">
                 <tbody>

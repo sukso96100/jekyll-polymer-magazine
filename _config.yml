@@ -1,12 +1,16 @@
 # Site settings
-title: "YoungbinLab Blog"
-description: "Logs of Youngbin han's Laboratory"
-email: sukso96100@gmail.com
+title: "Polymer Magazine" # Title of your site
+description: "A Polymer Library based Magazine style theme for jekyll" # description of your site
+email: foo@bar.com # Your Email Address
 
-name: 'Youngbin Han'
-author: 'Youngbin Han'
+name: 'jekyll'
+author: 'jekyll'
 
-disqus: 'youngbinhan'
+disqus: 'jekyll' # disqus shortname
+github: 'jekyll' # github usernamee
+facebook: 'jekyll' # facebook profile
+googleplus: 'jekyll' # gplus profile
+twitter: 'jekyll' # twitter username
 google_analytics:
 
 paginate: 10

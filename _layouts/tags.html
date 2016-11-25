@@ -32,9 +32,16 @@ layout: default
     {% include search.html %}
   </iron-pages>
   <script>
+  window.addEventListener('WebComponentsReady', function(e) {
+    console.log('WebComponentsReady');
+    openCollapse(location.hash.replace("#",""));
+  });
     function openCollapse(collapseId){
+      console.log(collapseId);
       closeAllCollapse();
-      document.getElementById(collapseId).opened = true;
+      if(collapseId.length>0){
+        document.getElementById(collapseId).opened = true;
+      }
     }
     function closeAllCollapse(){
       {% for tag in site.tags %}
