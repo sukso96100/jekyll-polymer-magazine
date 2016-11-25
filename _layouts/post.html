@@ -2,86 +2,89 @@
 layout: default
 ---
 <body>
-  <paper-header-panel>
-  {% include header.html %}
-  <div>
-    <section class="postview-header" elevation="0"
-      style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
-      align="center">
-      <div class="postview-titlebox" align="start">
-        <h1>{{ page.title }}</h1>
-        <p>
-          {{ page.date | date: "%Y.%m.%d" }}
-        </p>
-      </div>
-    </section>
-    {% include sharebtn.html %}
-      <div align="center">
-        <section class="postview-content" align="start">
-          {{ page.content }}
-          <section>
-            <hr class="hr-with-margin" />
-            {% for tag in page.tags %}
-              <b>#{{ tag }}</b>
-            {% endfor %}
-            <table class="social-btns">
-              <tbody>
-                <tr>
-                  <td>
-                    <!-- 구글플러스 +1 버튼 -->
-                    <g:plusone></g:plusone>
-                  </td>
-                  <td>
-                    <!-- Facebook 좋아요 버튼 -->
-                    <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}"
-                     data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-          {% include disqus.html %}
-        </section>
-
-        <!-- Show Previous and Next Post Link -->
-        <div class="grid grid-pad">
-          {% if page.previous.url %}
-            <div class="col-1-2">
-              <paper-material class="post-card-small" elevation="0"
-                onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                onclick="location.href='{{ site.baseurl}}/{{ page.previous.url }}'"
-                style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;{% endif %}"
-                align="start">
-                <paper-ripple></paper-ripple>
-                <h2>{{ page.previous.title }}</h2>
-                <p>
-                  {{ page.previous.date | date: "%Y.%m.%d" }}
-                </p>
-              </paper-material>
-            </div>
-          {% else %}{% endif %}
-          {% if page.next.url %}
-            <div class="col-1-2">
-              <paper-material class="post-card-small" elevation="0"
-                onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                onclick="location.href='{{ site.baseurl }}/{{ page.next.url }}'"
-                style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
-                align="start">
-                <paper-ripple></paper-ripple>
-                <h2>{{ page.next.title }}</h2>
-                <p>
-                  {{ page.next.date | date: "%Y.%m.%d" }}
-                </p>
-              </paper-material>
-            </div>
-          {% else %}{% endif %}
+  <iron-pages selected="0">
+    <paper-header-panel>
+    {% include header.html %}
+    <div>
+      <section class="postview-header" elevation="0"
+        style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
+        align="center">
+        <div class="postview-titlebox" align="start">
+          <h1>{{ page.title }}</h1>
+          <p>
+            {{ page.date | date: "%Y.%m.%d" }}
+          </p>
         </div>
+      </section>
+      {% include sharebtn.html %}
+        <div align="center">
+          <section class="postview-content" align="start">
+            {{ page.content }}
+            <section>
+              <hr class="hr-with-margin" />
+              {% for tag in page.tags %}
+                <b>#{{ tag }}</b>
+              {% endfor %}
+              <table class="social-btns">
+                <tbody>
+                  <tr>
+                    <td>
+                      <!-- 구글플러스 +1 버튼 -->
+                      <g:plusone></g:plusone>
+                    </td>
+                    <td>
+                      <!-- Facebook 좋아요 버튼 -->
+                      <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}"
+                       data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            {% include disqus.html %}
+          </section>
+
+          <!-- Show Previous and Next Post Link -->
+          <div class="grid grid-pad">
+            {% if page.previous.url %}
+              <div class="col-1-2">
+                <paper-material class="post-card-small" elevation="0"
+                  onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
+                  onclick="location.href='{{ site.baseurl}}/{{ page.previous.url }}'"
+                  style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+                  rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;{% endif %}"
+                  align="start">
+                  <paper-ripple></paper-ripple>
+                  <h2>{{ page.previous.title }}</h2>
+                  <p>
+                    {{ page.previous.date | date: "%Y.%m.%d" }}
+                  </p>
+                </paper-material>
+              </div>
+            {% else %}{% endif %}
+            {% if page.next.url %}
+              <div class="col-1-2">
+                <paper-material class="post-card-small" elevation="0"
+                  onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
+                  onclick="location.href='{{ site.baseurl }}/{{ page.next.url }}'"
+                  style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+                  rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
+                  align="start">
+                  <paper-ripple></paper-ripple>
+                  <h2>{{ page.next.title }}</h2>
+                  <p>
+                    {{ page.next.date | date: "%Y.%m.%d" }}
+                  </p>
+                </paper-material>
+              </div>
+            {% else %}{% endif %}
+          </div>
+        </div>
+        {% include footer.html %}
       </div>
-      {% include footer.html %}
-    </div>
-  </paper-header-panel>
+    </paper-header-panel>
+    {% include search.html %}
+  </iron-pages>
   {% include javascripts.html %}
 </body>

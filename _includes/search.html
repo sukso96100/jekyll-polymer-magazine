@@ -1,0 +1,53 @@
+  <paper-header-panel>
+    <paper-toolbar style="background:white; color:black;">
+      <paper-icon-button icon="arrow-back" onclick="toggleSearch()"></paper-icon-button>
+      <paper-input no-label-float label="Type to search"
+        oninput="searchPosts()" style="width:100%;" id="searchinput">
+      </paper-input>
+      <paper-icon-button icon="close" onclick="clearSearchInput()"></paper-icon-button>
+    </paper-toolbar>
+  <div>
+    <iron-list id="searchresults">
+    </iron-list>
+  </div>
+  <script>
+    var posts;
+
+    function searchPosts(){
+      var searchkeyword = document.getElementById('searchinput').value;
+      results = new Array;
+      if(posts==undefined){
+        fetch('{{ site.baseurl }}/search.json')
+          .then(function(response) {
+            response.json().then((json)=>{
+              posts=json;
+              filterResults(searchkeyword);
+            });
+          })
+      }else{
+        filterResults(searchkeyword);
+      }
+    }
+    function filterResults(keyword){
+      var results = document.getElementById('searchresults');
+      results.innerHTML = "";
+      if(keyword==""||keyword==undefined){
+        return;
+      }
+      for(var i=0; i<posts.length; i++){
+        console.log(keyword);
+        console.log(typeof(keyword));
+        console.log(posts[i]);
+        if(posts[i].title.includes(keyword) ||
+            posts[i].tags.includes(keyword) ||
+            posts[i].url.includes(keyword) ||
+            posts[i].date.includes(keyword)){
+              results.innerHTML += `<paper-item onclick="location.href='${posts[i].url}'">${posts[i].date} | ${posts[i].title}</paper-item>`;
+            }
+      }
+    }
+    function clearSearchInput(){
+      document.getElementById('searchinput').value = "";
+    }
+  </script>
+  </paper-header-panel>

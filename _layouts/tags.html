@@ -2,47 +2,45 @@
 layout: default
 ---
 <body>
-  <paper-header-panel>
-    {% include header.html %}
-    <div>
-      <div align="center" class="container">
-      <section class="postview-content" align="start">
-        <h1>Filter by Tags</h1>
-       {% for tag in site.tags %}
-       <paper-button onclick="openCollapse('{{ tag | first }}'); location.href='#{{ tag | first }}'">#{{ tag | first }}</paper-button>
-       {% endfor %}
-
-
-       {% for tag in site.tags %}
-       <iron-collapse id="{{ tag | first }}">
-
-         <h2>#{{ tag | first }}</h2>
-
-       {% for posts in tag %}
-         {% for post in posts %}
-         {% if post.title %}
-         <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
-         {% endif %}
+  <iron-pages selected="0">
+    <paper-header-panel>
+      {% include header.html %}
+      <div>
+        <div align="center" class="container">
+        <section class="postview-content" align="start">
+          <h1>Tags</h1>
+         {% for tag in site.tags %}
+         <paper-button onclick="openCollapse('{{ tag | first }}'); location.href='#{{ tag | first }}'">#{{ tag | first }}</paper-button>
          {% endfor %}
-       {% endfor %}
-      </iron-collapse>
-
-   {% endfor %}
-      </section>
-
-      <script>
-        function openCollapse(collapseId){
-          closeAllCollapse();
-          document.getElementById(collapseId).opened = true;
-        }
-        function closeAllCollapse(){
-          {% for tag in site.tags %}
-          document.getElementById('{{ tag | first }}').opened = false;
-          {% endfor %}
-        }
-      </script>
+         {% for tag in site.tags %}
+         <iron-collapse id="{{ tag | first }}">
+           <h2>#{{ tag | first }}</h2>
+         {% for posts in tag %}
+           {% for post in posts %}
+           {% if post.title %}
+           <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
+           {% endif %}
+           {% endfor %}
+         {% endfor %}
+        </iron-collapse>
+     {% endfor %}
+        </section>
+      </div>
+      {% include footer.html %}
     </div>
-    {% include footer.html %}
-  </div>
-  </paper-header-panel>
+    </paper-header-panel>
+    {% include search.html %}
+  </iron-pages>
+  <script>
+    function openCollapse(collapseId){
+      closeAllCollapse();
+      document.getElementById(collapseId).opened = true;
+    }
+    function closeAllCollapse(){
+      {% for tag in site.tags %}
+      document.getElementById('{{ tag | first }}').opened = false;
+      {% endfor %}
+    }
+  </script>
+  {% include javascripts.html %}
 </body>

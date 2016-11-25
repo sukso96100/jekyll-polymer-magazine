@@ -2,54 +2,56 @@
 layout: default
 ---
 <body>
-  <paper-header-panel >
-    {% include homeheader.html %}
-    <div>
-      <div class="grid grid-pad">
-
-        {% for post in paginator.posts %}
-        <div class="col-1-2">
-
-          <paper-material class="content post-card" elevation="0"
-            onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-            onclick="location.href='{{ site.baseurl }}/{{ post.url }}'"
-            style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}">
-              <paper-ripple></paper-ripple>
-              <h2>{{ post.title }}</h2>
-              <p>
-                {{ post.date | date: "%Y.%m.%d" }}
-              </p>
-              <p>
-                {{ post.content | strip_html | truncatewords:60 }}
-                <section>
-                  {% for tag in post.tags %}
-                  <b>#{{ tag }}</b>
-                  {% endfor %}
-                </section>
-              </p>
-            </paper-material>
+  <iron-pages selected="0">
+    <paper-header-panel>
+      {% include homeheader.html %}
+      <div>
+        <div class="grid grid-pad">
+          {% for post in paginator.posts %}
+          <div class="col-1-2">
+            <paper-material class="content post-card" elevation="0"
+              onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
+              onclick="location.href='{{ site.baseurl }}/{{ post.url }}'"
+              style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+              rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}">
+                <paper-ripple></paper-ripple>
+                <h2>{{ post.title }}</h2>
+                <p>
+                  {{ post.date | date: "%Y.%m.%d" }}
+                </p>
+                <p>
+                  {{ post.content | strip_html | truncatewords:60 }}
+                  <section>
+                    {% for tag in post.tags %}
+                    <b>#{{ tag }}</b>
+                    {% endfor %}
+                  </section>
+                </p>
+              </paper-material>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
+        <table align="center" style="margin-bottom:64px; margin-top:32px;">
+          <tr>
+            <td style="padding-right:16px;">
+                <paper-button {% if paginator.next_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.next_page_path }}'"{% else %}{% endif %}>
+                  <iron-icon icon="arrow-back"></iron-icon>
+                  Older
+                </paper-button>
+              </td>
+              <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
+              <td style="padding-left:16px;">
+                  <paper-button {% if paginator.previous_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.previous_page_path }}'"{% else %}{% endif %}>
+                 Newer
+                 <iron-icon icon="arrow-forward"></iron-icon>
+               </paper-button>
+             </td>
+           </tr>
+         </table>
+         {% include footer.html %}
       </div>
-      <table align="center" style="margin-bottom:64px; margin-top:32px;">
-        <tr>
-          <td style="padding-right:16px;">
-              <paper-button {% if paginator.next_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.next_page_path }}'"{% else %}{% endif %}>
-                <iron-icon icon="arrow-back"></iron-icon>
-                Older
-              </paper-button>
-            </td>
-            <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
-            <td style="padding-left:16px;">
-                <paper-button {% if paginator.previous_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.previous_page_path }}'"{% else %}{% endif %}>
-               Newer
-               <iron-icon icon="arrow-forward"></iron-icon>
-             </paper-button>
-           </td>
-         </tr>
-       </table>
-       {% include footer.html %}
-    </div>
-  </paper-header-panel>
+    </paper-header-panel>
+    {% include search.html %}
+  </iron-pages>
+  {% include javascripts.html %}
 </body>

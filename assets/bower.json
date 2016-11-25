@@ -25,6 +25,7 @@
     "paper-menu": "PolymerElements/paper-menu#^1.2.2",
     "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2",
     "paper-item": "PolymerElements/paper-item#^1.2.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.8"
   }
 }

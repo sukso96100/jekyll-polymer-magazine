@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<body>
+  <iron-pages selected="0">
+  <paper-header-panel>
+    {% include header.html %}
+    <div>
+      <div align="center" class="container">
+      <section class="postview-content" align="start">
+        <h1>Archive</h1>
+        {% for post in site.posts  %}
+
+           {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+           {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+
+           {% if forloop.first %}
+
+           <h2 class="card-content" id="{{ this_year }}-ref">{{this_year}}</h2><br>
+           <!-- <ul> -->
+           {% endif %}
+
+                <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
+
+
+           {% if forloop.last %}
+           {% else %}
+               {% if this_year != next_year %}
+
+               <h2 class="card-content" id="{{ next_year }}-ref">{{next_year}}</h2>
+               {% endif %}
+           {% endif %}
+
+        {% endfor %}
+      </section>
+
+    </div>
+    {% include footer.html %}
+  </div>
+  </paper-header-panel>
+  {% include search.html %}
+</iron-pages>
+  {% include javascripts.html %}
+</body>
