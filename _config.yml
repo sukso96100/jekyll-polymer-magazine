@@ -6,12 +6,12 @@ email: foo@bar.com # Your Email Address
 name: 'jekyll'
 author: 'jekyll'
 
-disqus: 'jekyll' # disqus shortname
-github: 'jekyll' # github usernamee
-facebook: 'jekyll' # facebook profile
-googleplus: 'jekyll' # gplus profile
-twitter: 'jekyll' # twitter username
-google_analytics:
+disqus: '' # disqus shortname
+github: '' # github usernamee
+facebook: '' # facebook profile
+googleplus: '' # gplus profile
+twitter: '' # twitter username
+google_analytics: # Google Analytics UA
 
 paginate: 10
 
