@@ -1,6 +1,6 @@
 # jekyll-polymer-magazine
 
-A [Google Design](degisn.google.com) inspired Magazine style theme for Jekyll based on Polymer Library
+A [Google Design](https://design.google.com/) inspired Magazine style theme for Jekyll based on Polymer Library
 
 ## Installation
 
@@ -9,13 +9,13 @@ A [Google Design](degisn.google.com) inspired Magazine style theme for Jekyll ba
 Add this line to your Jekyll site's Gemfile:
 
 ```ruby
-gem "polymer-magazine"
+gem "jekyll-polymer-magazine"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: polymer-magazine
+theme: jekyll-polymer-magazine
 ```
 
 And then execute:
@@ -24,7 +24,7 @@ $ bundle
 ```
 Or install it yourself as:
 ```bash
-$ gem install polymer-magazine
+$ gem install jekyll-polymer-magazine
 ```
 
 ### Install without gem
