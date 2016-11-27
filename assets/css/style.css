@@ -74,3 +74,8 @@ img{
 .container{
   min-height: 75%;
 }
+
+blockquote{
+  border-left: solid grey 8px;
+  padding: 0px 8px 0px 8px;
+}
